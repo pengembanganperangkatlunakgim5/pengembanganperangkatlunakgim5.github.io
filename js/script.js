@@ -98,20 +98,3 @@ document.getElementById("submit-button").addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   updateActiveNav();
 });
-
-// Fungsi untuk menentukan tautan navigasi yang aktif
-function updateActiveNav() {
-  const currentUrl = window.location.href;
-  const navLinks = document.querySelectorAll(".nav-link");
-
-  navLinks.forEach((link) => {
-    if (link.href === currentUrl) {
-      link.classList.add("ring-1", "ring-purple-500", "ring-offset-2");
-    } else {
-      link.classList.remove("active");
-    }
-  });
-}
-
-// Panggil fungsi saat halaman dimuat
-document.addEventListener("DOMContentLoaded", updateActiveNav);
