@@ -5,7 +5,7 @@ const students = [
     urlInstagram: "instagram.com/alanzagi",
     insta: "alanzagi",
     title: "Wakil Ketua Kelas",
-    imageUrl: "./img/Alan.jpg",
+    imageUrl: "./img/alan.jpg",
   },
   {
     name: "Leonard Lay",
