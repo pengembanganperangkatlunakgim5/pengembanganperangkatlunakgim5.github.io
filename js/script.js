@@ -25,27 +25,77 @@ const students = [
   },
   {
     name: "Nawang Sue Runus",
-    quote: "Berbagi itu indah, paham?!",
+    quote: "Diam tetapi tidak kejam!",
+    urlInstagram: "instagram.com/pplg.xl",
+    insta: "pplg.xl",
+    title: "Ketua Kelas",
+    imageUrl: "./img/nawangsuerunus2.jpg",
+  },
+  {
+    name: "Harvin Deniro",
+    quote: "No fear.",
     urlInstagram: "instagram.com/pplg.xl",
     insta: "pplg.xl",
     title: "Siswa Kelas",
-    imageUrl: "./img/nawang.jpg",
+    imageUrl: "./img/harvindeniro.jpg",
+  },
+  {
+    name: "Hermengky",
+    quote: "做一个人不要三心二意, 明白",
+    urlInstagram: "instagram.com/ssc_dick",
+    insta: "ssc_dick",
+    title: "Siswa Kelas",
+    imageUrl: "./img/hermengky.jpg",
+  },
+  {
+    name: "Erik",
+    quote: "Pria sejati lahir untuk menantang gelombang pasang. Bukan ia mengekang dan mencari aman untuk dirinya sendiri",
+    urlInstagram: "instagram.com/bg_rikzz",
+    insta: "bg_rikzz",
+    title: "Seksi Keamanan dan Keagamaan",
+    imageUrl: "./img/erik.jpg",
+  },
+  {
+    name: "Angely Phang",
+    quote: "Saat kau menertawakan hidupku, apakah hidupmu terasa lebih baik? Begitukah?",
+    urlInstagram: "instagram.com/manusia_disin1",
+    insta: "manusia_disin1",
+    title: "Siswa Kelas",
+    imageUrl: "./img/angelyphang.jpg",
+  },
+  {
+    name: "Hengky",
+    quote: "Apapun yang terjadi tetaplah tersenyum",
+    urlInstagram: "instagram.com/hengky.096",
+    insta: "hengky.096",
+    title: "Siswa Kelas",
+    imageUrl: "./img/hengky.jpg",
+  },
+  {
+    name: "Aprilisia",
+    quote: "No matter how difficult the path is, if it's a blessing for you, God will surely make it easy",
+    urlInstagram: "instagram.com/aprilicia_04",
+    insta: "aprilicia_04",
+    title: "Sekretaris Kelas",
+    imageUrl: "./img/aprilisia.jpg",
   },
   // Tambahkan data siswa lainnya di sini jika diperlukan
 ];
 
-// Periksa apakah elemen dengan ID "studentList" ada dalam HTML
 const studentList = document.getElementById("studentList");
 
-// Lakukan iterasi melalui setiap mahasiswa dalam array students
-students.forEach((student) => {
-  const listItem = document.createElement("li");
-  listItem.className = "flex justify-between gap-x-6 py-5";
-  listItem.innerHTML = `
+// Mengurutkan array students berdasarkan nama (huruf kecil, case insensitive)
+students.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase()));
+
+// Menggunakan map() untuk membuat elemen li dan menggabungkannya ke dalam satu innerHTML
+studentList.innerHTML = students
+  .map(
+    (student) => `
+  <li class="flex justify-between gap-x-6 py-5">
     <div class="flex min-w-0 gap-x-4">
-      <<div class="h-12 w-12 flex-none rounded-full bg-white overflow-hidden">
-      <img class="h-full w-full object-cover" src="${student.imageUrl}" alt="${student.name}" />
-    </div>
+      <div class="h-12 w-12 flex-none rounded-full bg-white overflow-hidden">
+        <img class="h-full w-full object-cover" src="${student.imageUrl}" alt="${student.name}" />
+      </div>
       <div class="min-w-0 flex-auto">
         <p class="text-sm font-semibold leading-6 text-white">${student.name}</p>
         <a href="https://instagram.com/${student.insta}" target="_blank">
@@ -57,10 +107,10 @@ students.forEach((student) => {
       <p class="text-sm leading-6 text-white">${student.title}</p>
       ${student.quote ? `<p class="mt-1 text-xs leading-5 text-white">&quot;${student.quote}&quot;</p>` : ""}
     </div>
-  `;
-  // Tambahkan elemen li yang dibuat ke dalam elemen ul dengan ID "studentList"
-  studentList.appendChild(listItem);
-});
+  </li>
+`
+  )
+  .join("");
 
 // Animasi angka
 function animateNumbers(element, start, end, duration) {
