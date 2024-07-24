@@ -1,11 +1,35 @@
 const students = [
   {
     name: "Alan",
-    quote: "We will do whatever it takes",
+    quote: "We will do whatever it takes.",
     urlInstagram: "instagram.com/alanzagi",
     insta: "alanzagi",
     title: "Wakil Ketua Kelas",
     imageUrl: "./img/Alan.webp",
+  },
+  {
+    name: "Leonard Lay",
+    quote: "Kalo bisa maju, kenapa harus mundur?",
+    urlInstagram: "instagram.com/hyy_im_leo",
+    insta: "hyy_im_leo",
+    title: "Siswa Kelas",
+    imageUrl: "./img/leonardlay.jpg",
+  },
+  {
+    name: "Shervy",
+    quote: "",
+    urlInstagram: "instagram.com/_shervy01",
+    insta: "_shervy01",
+    title: "Siswa Kelas",
+    imageUrl: "./img/shervy2.jpg",
+  },
+  {
+    name: "Nawang Sue Runus",
+    quote: "Berbagi itu indah, paham?!",
+    urlInstagram: "instagram.com/pplg.xl",
+    insta: "pplg.xl",
+    title: "Siswa Kelas",
+    imageUrl: "./img/nawang.jpg",
   },
   // Tambahkan data siswa lainnya di sini jika diperlukan
 ];
@@ -31,7 +55,7 @@ students.forEach((student) => {
     </div>
     <div class="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
       <p class="text-sm leading-6 text-white">${student.title}</p>
-      ${student.quote ? `<p class="mt-1 text-xs leading-5 text-white">&quot;${student.quote}.&quot;</p>` : ""}
+      ${student.quote ? `<p class="mt-1 text-xs leading-5 text-white">&quot;${student.quote}&quot;</p>` : ""}
     </div>
   `;
   // Tambahkan elemen li yang dibuat ke dalam elemen ul dengan ID "studentList"
