@@ -1,7 +1,7 @@
 const students = [
   {
     name: "Alan",
-    quote: "We will do whatever it takes.",
+    quote: "I will do whatever it takes.",
     urlInstagram: "instagram.com/alanzagi",
     insta: "alanzagi",
     title: "Wakil Ketua Kelas",
@@ -17,7 +17,7 @@ const students = [
   },
   {
     name: "Shervy",
-    quote: "",
+    quote: "If there's will, there's way",
     urlInstagram: "instagram.com/_shervy01",
     insta: "_shervy01",
     title: "Siswa Kelas",
@@ -41,7 +41,7 @@ const students = [
   },
   {
     name: "Hermengky",
-    quote: "做一个人不要三心二意, 明白",
+    quote: "做一个人不要三心二意, 明白.",
     urlInstagram: "instagram.com/ssc_dick",
     insta: "ssc_dick",
     title: "Siswa Kelas",
@@ -65,7 +65,7 @@ const students = [
   },
   {
     name: "Hengky",
-    quote: "Apapun yang terjadi tetaplah tersenyum",
+    quote: "Apapun yang terjadi tetaplah tersenyum.",
     urlInstagram: "instagram.com/hengky.096",
     insta: "hengky.096",
     title: "Siswa Kelas",
@@ -79,7 +79,30 @@ const students = [
     title: "Sekretaris Kelas",
     imageUrl: "./img/aprilisia.jpg",
   },
-  // Tambahkan data siswa lainnya di sini jika diperlukan
+  {
+    name: "Daniel Derlino",
+    quote: "Kenyang motivasi, lapar aksi. Tinggi imajinasi, lupa ekspetasi",
+    urlInstagram: "instagram.com/daniel.derlino",
+    insta: "daniel.derlino",
+    title: "Siswa Kelas",
+    imageUrl: "./img/danielderlino.jpg",
+  },
+  {
+    name: "Ravi Kurniawan",
+    quote: "Semangatlah, karena setiap pengetahuan baru akan membuka pintu kesuksesan di masa depan.",
+    urlInstagram: "instagram.com/pplg.xl",
+    insta: "pplg.xl",
+    title: "Siswa Kelas",
+    imageUrl: "./img/ravikurniawan.jpg",
+  },
+  {
+    name: "Syaiful Roiz",
+    quote: "Kukira move-on dari orang yang pernah menjalin hubungan itu berat, tapi ternyata move on dari orang yang sama sekali belum pernah menjalin hubungan apapun itu jauh lebih berat.",
+    urlInstagram: "instagram.com/@__roizs",
+    insta: "__roizs",
+    title: "Siswa Kelas",
+    imageUrl: "./img/syaifulroiz.jpg",
+  },
 ];
 
 const studentList = document.getElementById("studentList");
