@@ -21,7 +21,7 @@ const students = [
     urlInstagram: "instagram.com/_shervy01",
     insta: "_shervy01",
     title: "Siswa Kelas",
-    imageUrl: "./img/shervy2.jpg",
+    imageUrl: "./img/shervy.jpg",
   },
   {
     name: "Nawang Sue Runus",
@@ -29,7 +29,7 @@ const students = [
     urlInstagram: "instagram.com/pplg.xl",
     insta: "pplg.xl",
     title: "Ketua Kelas",
-    imageUrl: "./img/nawangsuerunus2.jpg",
+    imageUrl: "./img/nawangsuerunus.jpg",
   },
   {
     name: "Harvin Deniro",
