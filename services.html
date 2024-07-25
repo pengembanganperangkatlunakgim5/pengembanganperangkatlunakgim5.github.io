@@ -1,328 +1,385 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>XI PPLG</title>
-    <link rel="icon" href="./img/purple_pplg.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="./img/purple_pplg.png" type="image/x-icon" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <div x-data="{ mobileMenuOpen: false }">
-      <header class="absolute inset-x-0 top-0 z-50">
-        <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-          <div class="flex lg:flex-1">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XI PPLG</title>
+  <link rel="icon" href="./img/purple_pplg.png" type="image/x-icon" />
+  <link rel="shortcut icon" href="./img/purple_pplg.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div x-data="{ mobileMenuOpen: false }">
+    <header class="absolute inset-x-0 top-0 z-50">
+      <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+        <div class="flex lg:flex-1">
+          <a href="#" class="-m-1.5 p-1.5">
+            <span class="sr-only">XI PPLG</span>
+            <img class="h-8 w-auto transform scale-250" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
+          </a>
+        </div>
+        <div class="flex lg:hidden">
+          <button @click="mobileMenuOpen = true" type="button"
+            class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+            <span class="sr-only">Open main menu</span>
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+        <div class="hidden lg:flex lg:gap-x-6">
+          <a href="index.html"
+            class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear">Home</a>
+          <a href="services.html"
+            class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear ring-1 ring-purple-500 ring-offset-2">Services</a>
+          <a href="portfolio.html"
+            class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear">Portfolio</a>
+          <a href="contact.html"
+            class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear">Contact</a>
+        </div>
+        <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+      </nav>
+      <!-- Mobile menu, show/hide based on menu open state. -->
+      <div x-show="mobileMenuOpen" class="lg:hidden" role="dialog" aria-modal="true">
+        <!-- Background backdrop, show/hide based on slide-over state. -->
+        <div class="fixed inset-0 z-50 bg-gray-600 bg-opacity-75" @click="mobileMenuOpen = false"></div>
+        <div
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div class="flex items-center justify-between">
             <a href="#" class="-m-1.5 p-1.5">
               <span class="sr-only">XI PPLG</span>
-              <img class="h-8 w-auto transform scale-250" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
+              <img class="h-8 w-auto" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
             </a>
-          </div>
-          <div class="flex lg:hidden">
-            <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
-              <span class="sr-only">Open main menu</span>
-              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            <button @click="mobileMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+              <span class="sr-only">Close menu</span>
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
-          <div class="hidden lg:flex lg:gap-x-6">
-            <a href="index.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear">Home</a>
-            <a
-              href="services.html"
-              class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear ring-1 ring-purple-500 ring-offset-2"
-              >Services</a
-            >
-            <a href="portfolio.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear"
-              >Portfolio</a
-            >
-            <a href="contact.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear"
-              >Contact</a
-            >
+          <div class="mt-6 flow-root">
+            <div class="-my-6 divide-y divide-gray-500/10">
+              <div class="space-y-2 py-6">
+                <a href="index.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                <a href="services.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+                <a href="portfolio.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Portfolio</a>
+                <a href="contact.html"
+                  class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+              </div>
+            </div>
           </div>
-          <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
-        </nav>
-        <!-- Mobile menu, show/hide based on menu open state. -->
-        <div x-show="mobileMenuOpen" class="lg:hidden" role="dialog" aria-modal="true">
-          <!-- Background backdrop, show/hide based on slide-over state. -->
-          <div class="fixed inset-0 z-50 bg-gray-600 bg-opacity-75" @click="mobileMenuOpen = false"></div>
-          <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-            <div class="flex items-center justify-between">
-              <a href="#" class="-m-1.5 p-1.5">
-                <span class="sr-only">XI PPLG</span>
-                <img class="h-8 w-auto" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
-              </a>
-              <button @click="mobileMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
-                <span class="sr-only">Close menu</span>
-                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </div>
+      </div>
+    </header>
+  </div>
+  <!-- Akhir dari Navbar -->
+
+  <!-- Main -->
+  <div class="bg-white relative pt-40 pb-20 lg:pt-44 dark:bg-gray-900 overflow-x-hidden h-screen">
+    <div class="relative xl:container m-auto px-6 md:px-12 lg:px-6">
+      <h1
+        class="sm:mx-auto sm:w-10/12 md:w-2/3 font-black text-purple-900 text-4xl text-center sm:text-5xl md:text-6xl lg:w-auto lg:text-left xl:text-7xl dark:text-white">
+        Layanan terbaik dari <br class="lg:block hidden" />
+        <span
+          class="relative text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-purple-500 dark:from-purple-400 dark:to-purple-900">Kelas
+          PPLG 5</span>.
+      </h1>
+      <div class="lg:flex">
+        <div
+          class="relative mt-8 md:mt-16 space-y-8 sm:w-10/12 md:w-2/3 lg:ml-0 sm:mx-auto text-center lg:text-left lg:mr-auto lg:w-7/12">
+          <p class="sm:text-lg text-gray-700 dark:text-gray-300 lg:w-11/12">
+            PPLG 5 menggabungkan antara pengalaman pengguna, strategi pemasaran serta melakukan pendekatan berorientasi
+            ROI untuk membantu kesuksesan klien kami melalui inovasi digital.
+          </p>
+          <button type="button"
+            class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4">
+            Daftar Layanan
+          </button>
+          <button type="button"
+            class="text-white bg-transparent ring-1 ring-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 hover:bg-purple-700 dark:hover:shadow-lg dark:hover:shadow-purple-900/80 transition duration-200 ease-linear font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4">
+            Cek Promo
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Akhir dari Main -->
+
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <rect width="1440" height="320" fill="#f1f5f9" />
+    <path fill="#111827" fill-opacity="1"
+      d="M0,64L16,80C32,96,64,128,96,160C128,192,160,224,192,229.3C224,235,256,213,288,176C320,139,352,85,384,74.7C416,64,448,96,480,101.3C512,107,544,85,576,101.3C608,117,640,171,672,170.7C704,171,736,117,768,90.7C800,64,832,64,864,53.3C896,43,928,21,960,42.7C992,64,1024,128,1056,160C1088,192,1120,192,1152,165.3C1184,139,1216,85,1248,69.3C1280,53,1312,75,1344,85.3C1376,96,1408,96,1424,96L1440,96L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z">
+    </path>
+  </svg>
+
+  <!-- Section -->
+  <div class="bg-slate-100 py-24 sm:py-32">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl sm:text-center">
+        <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Jasa Pembuatan Website</h2>
+        <p class="mt-6 text-lg leading-8 text-gray-600">Kami menyediakan Jasa Pembuatan Website untuk kebutuhan pribadi,
+          organisasi, atau UMKM anda dengan harga terjangkau dan kualitas terbaik.</p>
+      </div>
+      <div
+        class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:justify-center lg:max-w-none">
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
+          <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+            <div class="flex items-baseline text-gray-900 dark:text-white">
+              <span class="text-3xl font-semibold">$</span>
+              <span class="text-5xl font-extrabold tracking-tight">49</span>
+              <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            </div>
+            <ul role="list" class="space-y-5 my-7">
+              <li class="flex items-center">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                 </svg>
-              </button>
-            </div>
-            <div class="mt-6 flow-root">
-              <div class="-my-6 divide-y divide-gray-500/10">
-                <div class="space-y-2 py-6">
-                  <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
-                  <a href="services.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
-                  <a href="portfolio.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Portfolio</a>
-                  <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
-                </div>
-              </div>
-            </div>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team
+                  members</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud
+                  storage</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration
+                  help</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
+              </li>
+            </ul>
+            <button type="button"
+              class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300">
+              Choose Standard
+            </button>
           </div>
-        </div>
-      </header>
-    </div>
-    <!-- Akhir dari Navbar -->
+          <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+            <div class="flex items-baseline text-gray-900 dark:text-white">
+              <span class="text-3xl font-semibold">$</span>
+              <span class="text-5xl font-extrabold tracking-tight">49</span>
+              <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            </div>
+            <ul role="list" class="space-y-5 my-7">
+              <li class="flex items-center">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team
+                  members</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud
+                  storage</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration
+                  help</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
+              </li>
+            </ul>
+            <button type="button"
+              class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300">
+              Choose Standard
+            </button>
+          </div>
+          <div
+            class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
+            <div class="flex items-baseline text-gray-900 dark:text-white">
+              <span class="text-3xl font-semibold">$</span>
+              <span class="text-5xl font-extrabold tracking-tight">49</span>
+              <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
+            </div>
+            <ul role="list" class="space-y-5 my-7">
+              <li class="flex items-center">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team
+                  members</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud
+                  storage</span>
+              </li>
+              <li class="flex">
+                <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration
+                  help</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
+              </li>
+              <li class="flex line-through decoration-gray-500">
+                <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <path
+                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                </svg>
+                <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
+              </li>
+            </ul>
+            <button type="button"
+              class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300">
+              Choose Standard
+            </button>
+          </div>
 
-    <!-- Main -->
-    <div class="bg-white relative pt-40 pb-20 lg:pt-44 dark:bg-gray-900 overflow-x-hidden h-screen">
-      <div class="relative xl:container m-auto px-6 md:px-12 lg:px-6">
-        <h1 class="sm:mx-auto sm:w-10/12 md:w-2/3 font-black text-purple-900 text-4xl text-center sm:text-5xl md:text-6xl lg:w-auto lg:text-left xl:text-7xl dark:text-white">
-          Layanan terbaik dari <br class="lg:block hidden" />
-          <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-purple-500 dark:from-purple-400 dark:to-purple-900">Kelas PPLG 5</span>.
-        </h1>
-        <div class="lg:flex">
-          <div class="relative mt-8 md:mt-16 space-y-8 sm:w-10/12 md:w-2/3 lg:ml-0 sm:mx-auto text-center lg:text-left lg:mr-auto lg:w-7/12">
-            <p class="sm:text-lg text-gray-700 dark:text-gray-300 lg:w-11/12">
-              PPLG 5 menggabungkan antara pengalaman pengguna, strategi pemasaran serta melakukan pendekatan berorientasi ROI untuk membantu kesuksesan klien kami melalui inovasi digital.
-            </p>
-            <button
-              type="button"
-              class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 shadow-lg shadow-purple-500/50 dark:shadow-lg dark:shadow-purple-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4"
-            >
-              Daftar Layanan
-            </button>
-            <button
-              type="button"
-              class="text-white bg-transparent ring-1 ring-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 hover:bg-purple-700 dark:hover:shadow-lg dark:hover:shadow-purple-900/80 transition duration-200 ease-linear font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4"
-            >
-              Cek Promo
-            </button>
-          </div>
+          <!-- Similar content for other cards, adjusted for each specific plan -->
         </div>
       </div>
+
     </div>
-    <!-- Akhir dari Main -->
+  </div>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <rect width="1440" height="320" fill="#f1f5f9" />
-      <path
-        fill="#111827"
-        fill-opacity="1"
-        d="M0,64L16,80C32,96,64,128,96,160C128,192,160,224,192,229.3C224,235,256,213,288,176C320,139,352,85,384,74.7C416,64,448,96,480,101.3C512,107,544,85,576,101.3C608,117,640,171,672,170.7C704,171,736,117,768,90.7C800,64,832,64,864,53.3C896,43,928,21,960,42.7C992,64,1024,128,1056,160C1088,192,1120,192,1152,165.3C1184,139,1216,85,1248,69.3C1280,53,1312,75,1344,85.3C1376,96,1408,96,1424,96L1440,96L1440,0L1424,0C1408,0,1376,0,1344,0C1312,0,1280,0,1248,0C1216,0,1184,0,1152,0C1120,0,1088,0,1056,0C1024,0,992,0,960,0C928,0,896,0,864,0C832,0,800,0,768,0C736,0,704,0,672,0C640,0,608,0,576,0C544,0,512,0,480,0C448,0,416,0,384,0C352,0,320,0,288,0C256,0,224,0,192,0C160,0,128,0,96,0C64,0,32,0,16,0L0,0Z"
-      ></path>
-    </svg>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+    <rect width="1440" height="320" fill="#f1f5f9" />
+    <path fill="#111827" fill-opacity="1"
+      d="M0,64L16,80C32,96,64,128,96,160C128,192,160,224,192,229.3C224,235,256,213,288,176C320,139,352,85,384,74.7C416,64,448,96,480,101.3C512,107,544,85,576,101.3C608,117,640,171,672,170.7C704,171,736,117,768,90.7C800,64,832,64,864,53.3C896,43,928,21,960,42.7C992,64,1024,128,1056,160C1088,192,1120,192,1152,165.3C1184,139,1216,85,1248,69.3C1280,53,1312,75,1344,85.3C1376,96,1408,96,1424,96L1440,96L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z">
+    </path>
+  </svg>
 
-    <!-- Section -->
-    <div class="bg-slate-100 py-24 sm:py-32">
-      <div class="mx-auto max-w-7xl px-6 lg:px-8">
-        <div class="mx-auto max-w-2xl sm:text-center">
-          <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Jasa Pembuatan Website</h2>
-          <p class="mt-6 text-lg leading-8 text-gray-600">Kami menyediakan Jasa Pembuatan Website untuk kebutuhan pribadi, organisasi, atau UMKM anda dengan harga terjangkau dan kualitas terbaik.</p>
-        </div>
-        <div class="mx-auto mt-16 max-w-2xl rounded-3xl ring-1 ring-gray-200 sm:mt-20 lg:mx-0 lg:flex lg:justify-center lg:max-w-none">
-          <div class="flex space-x-4">
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
-              <div class="flex items-baseline text-gray-900 dark:text-white">
-                <span class="text-3xl font-semibold">$</span>
-                <span class="text-5xl font-extrabold tracking-tight">49</span>
-                <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex items-center">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team members</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud storage</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration help</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
-              >
-                Choose plan
-              </button>
-            </div>
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
-              <div class="flex items-baseline text-gray-900 dark:text-white">
-                <span class="text-3xl font-semibold">$</span>
-                <span class="text-5xl font-extrabold tracking-tight">49</span>
-                <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex items-center">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team members</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud storage</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration help</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
-              >
-                Choose plan
-              </button>
-            </div>
-            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700">
-              <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-gray-400">Standard plan</h5>
-              <div class="flex items-baseline text-gray-900 dark:text-white">
-                <span class="text-3xl font-semibold">$</span>
-                <span class="text-5xl font-extrabold tracking-tight">49</span>
-                <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-400">/month</span>
-              </div>
-              <ul role="list" class="space-y-5 my-7">
-                <li class="flex items-center">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">2 team members</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">20GB Cloud storage</span>
-                </li>
-                <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-blue-700 dark:text-blue-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 dark:text-gray-400 ms-3">Integration help</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Sketch Files</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">API Access</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">Complete documentation</span>
-                </li>
-                <li class="flex line-through decoration-gray-500">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-400 dark:text-gray-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
-                  </svg>
-                  <span class="text-base font-normal leading-tight text-gray-500 ms-3">24×7 phone & email support</span>
-                </li>
-              </ul>
-              <button
-                type="button"
-                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-900 font-medium rounded-lg text-sm px-5 py-2.5 inline-flex justify-center w-full text-center"
-              >
-                Choose plan
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <script src="js/script.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 2000,
+      offset: 200,
+      delay: 100,
+      once: true,
+    });
+  </script>
+</body>
 
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-      <rect width="1440" height="320" fill="#f1f5f9" />
-      <path
-        fill="#111827"
-        fill-opacity="1"
-        d="M0,64L16,80C32,96,64,128,96,160C128,192,160,224,192,229.3C224,235,256,213,288,176C320,139,352,85,384,74.7C416,64,448,96,480,101.3C512,107,544,85,576,101.3C608,117,640,171,672,170.7C704,171,736,117,768,90.7C800,64,832,64,864,53.3C896,43,928,21,960,42.7C992,64,1024,128,1056,160C1088,192,1120,192,1152,165.3C1184,139,1216,85,1248,69.3C1280,53,1312,75,1344,85.3C1376,96,1408,96,1424,96L1440,96L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z"
-      ></path>
-    </svg>
-
-    <script src="js/script.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init({
-        duration: 2000,
-        offset: 200,
-        delay: 100,
-        once: true,
-      });
-    </script>
-  </body>
 </html>
