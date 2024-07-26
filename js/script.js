@@ -103,6 +103,38 @@ const students = [
     title: "Siswa Kelas",
     imageUrl: "./img/syaifulroiz.jpg",
   },
+  {
+    name: "Justine",
+    quote: "Teguhkan keadilan.",
+    urlInstagram: "instagram.com/pplg.xl",
+    insta: "pplg.xl",
+    title: "Siswa Kelas",
+    imageUrl: "./img/justine.jpg",
+  },
+  {
+    name: "Pero Aparil",
+    quote: "Anak SMK memang gak punya kisah romantis di sekolahnya tapi anak SMK punya solidaritas di sekolahnya.",
+    urlInstagram: "instagram.com/peropero617",
+    insta: "peropero617",
+    title: "Siswa Kelas",
+    imageUrl: "./img/peroaparil.jpg",
+  },
+  {
+    name: "Salvianus",
+    quote: "Jangan jadi seperti pohon pisang yang memiliki jantung tapi tidak memiliki hati.",
+    urlInstagram: "instagram.com/talinosamuel",
+    insta: "talinosamuel",
+    title: "Siswa Kelas",
+    imageUrl: "./img/salvianus.jpeg",
+  },
+  {
+    name: "Sila",
+    quote: "Semoga sukses selalu.",
+    urlInstagram: "instagram.com/yx_sil4zz",
+    insta: "yx_sil4zz",
+    title: "Siswa Kelas",
+    imageUrl: "./img/sila.jpeg",
+  },
 ];
 
 const studentList = document.getElementById("studentList");
