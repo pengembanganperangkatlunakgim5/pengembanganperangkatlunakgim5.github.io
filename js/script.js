@@ -146,7 +146,7 @@ students.sort((a, b) => a.name.toLowerCase().localeCompare(b.name.toLowerCase())
 studentList.innerHTML = students
   .map(
     (student) => `
-  <li class="flex justify-between gap-x-6 py-5">
+  <li class="flex justify-between gap-x-6 py-5 bg-gray-900">
     <div class="flex min-w-0 gap-x-4">
       <div class="h-12 w-12 flex-none rounded-full bg-white overflow-hidden">
         <img class="h-full w-full object-cover" src="${student.imageUrl}" alt="${student.name}" />
