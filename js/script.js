@@ -227,3 +227,25 @@ document.getElementById("submit-button").addEventListener("click", function () {
 document.addEventListener("DOMContentLoaded", function () {
   updateActiveNav();
 });
+
+function toggleCard() {
+  const cards = document.getElementsByClassName("card");
+  const toggleButtons = document.getElementsByClassName("toggle-button");
+  const additionalInfos = document.getElementsByClassName("additional-info");
+
+  for (let i = 0; i < cards.length; i++) {
+    const card = cards[i];
+    const toggleButton = toggleButtons[i];
+    const additionalInfo = additionalInfos[i];
+
+    if (additionalInfo.classList.contains("hidden")) {
+      additionalInfo.classList.remove("hidden");
+      card.classList.add("expanded"); // Menambahkan kelas jika diperlukan untuk animasi atau styling
+      toggleButton.textContent = "Ringkasan";
+    } else {
+      additionalInfo.classList.add("hidden");
+      card.classList.remove("expanded"); // Menghapus kelas jika diperlukan untuk animasi atau styling
+      toggleButton.textContent = "Lihat Lebih Lengkap";
+    }
+  }
+}
