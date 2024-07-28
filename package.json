@@ -1,8 +1,15 @@
 {
-  "devDependencies": {
-    "tailwindcss": "^3.4.7"
+  "name": "nama-proyek-anda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "tailwindcss-hero-patterns": "^0.1.2"
+    "aos": "^2.3.4",
+    "tailwindcss": "^2.0.0"
   }
 }

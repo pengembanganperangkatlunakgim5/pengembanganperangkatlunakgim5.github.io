@@ -13,7 +13,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <div x-data="{ mobileMenuOpen: false }">
+    <nav x-data="{ mobileMenuOpen: false }">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -78,11 +78,11 @@
           </div>
         </div>
       </header>
-    </div>
+    </nav>
     <!-- Akhir dari Navbar -->
 
     <!-- Main -->
-    <div class="relative h-screen bg-gray-900">
+    <main class="relative h-screen bg-gray-900">
       <div class="relative z-10 flex items-center justify-center h-full">
         <div class="text-center max-w-2xl px-6">
           <div class="hidden sm:mb-8 sm:flex sm:justify-center">
@@ -108,7 +108,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <!-- Akhir dari Main -->
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -185,14 +185,14 @@
     </svg>
 
     <!-- Daftar Siswa -->
-    <div class="bg-slate-100 relative py-24 sm:py-32">
+    <section class="bg-slate-100 relative py-24 sm:py-32">
       <div class="relative z-20 h-screen flex items-center justify-center">
         <div class="container mx-auto p-10 sm:p-6 md:p-8 lg:p-10 xl:p-12">
           <h1 class="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl mx-auto h-12 text-center md:mb-36" data-aos="fade-down">Daftar Siswa</h1>
           <ul id="studentList" role="list" class="divide-y divide-gray-100 h-72 overflow-y-auto mt-8 ring-1 ring-white"></ul>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Akhir dari Daftar Siswa -->
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

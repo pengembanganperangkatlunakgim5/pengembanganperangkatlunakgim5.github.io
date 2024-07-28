@@ -13,7 +13,7 @@
 
   <body>
     <!-- Navbar -->
-    <div x-data="{ mobileMenuOpen: false }">
+    <nav x-data="{ mobileMenuOpen: false }">
       <header class="absolute inset-x-0 top-0 z-50">
         <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
           <div class="flex lg:flex-1">
@@ -76,11 +76,11 @@
           </div>
         </div>
       </header>
-    </div>
+    </nav>
     <!-- Akhir dari Navbar -->
 
     <!-- Main -->
-    <div class="bg-white relative pt-48 lg:pt-44 dark:bg-gray-900 overflow-x-hidden h-screen">
+    <main class="bg-white relative pt-48 lg:pt-44 dark:bg-gray-900 overflow-x-hidden h-screen">
       <div class="relative xl:container px-6 md:px-12 lg:px-6">
         <h1 class="sm:mx-auto sm:w-10/12 md:w-2/3 font-black text-purple-900 text-4xl text-center sm:text-5xl md:text-6xl lg:w-auto lg:text-left xl:text-7xl dark:text-white">
           Layanan terbaik dari <br class="lg:block hidden" />
@@ -106,7 +106,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </main>
     <!-- Akhir dari Main -->
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -118,8 +118,8 @@
       ></path>
     </svg>
 
-    <!-- Section -->
-    <div class="bg-slate-100 py-24 sm:py-32">
+    <!-- Section Card-->
+    <section class="bg-slate-100 py-24 sm:py-32">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl sm:text-center">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Jasa Pembuatan Website</h2>
@@ -131,7 +131,7 @@
               <h5 class="mb-4 text-xl font-medium text-gray-500 dark:text-white">PPLG Basic</h5>
               <div class="flex items-baseline text-gray-900 dark:text-white mb-4">
                 <span class="text-3xl font-semibold">Rp</span>
-                <span class="text-3xl font-extrabold tracking-tight">30.000</span>
+                <span class="text-3xl font-extrabold tracking-tight">40.000</span>
                 <span class="ms-1 text-xl font-normal text-gray-500 dark:text-gray-200">/bulan</span>
               </div>
               <button
@@ -655,7 +655,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
     <!-- Akhir Section Card -->
 
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -666,6 +666,71 @@
         d="M0,64L16,80C32,96,64,128,96,160C128,192,160,224,192,229.3C224,235,256,213,288,176C320,139,352,85,384,74.7C416,64,448,96,480,101.3C512,107,544,85,576,101.3C608,117,640,171,672,170.7C704,171,736,117,768,90.7C800,64,832,64,864,53.3C896,43,928,21,960,42.7C992,64,1024,128,1056,160C1088,192,1120,192,1152,165.3C1184,139,1216,85,1248,69.3C1280,53,1312,75,1344,85.3C1376,96,1408,96,1424,96L1440,96L1440,320L1424,320C1408,320,1376,320,1344,320C1312,320,1280,320,1248,320C1216,320,1184,320,1152,320C1120,320,1088,320,1056,320C1024,320,992,320,960,320C928,320,896,320,864,320C832,320,800,320,768,320C736,320,704,320,672,320C640,320,608,320,576,320C544,320,512,320,480,320C448,320,416,320,384,320C352,320,320,320,288,320C256,320,224,320,192,320C160,320,128,320,96,320C64,320,32,320,16,320L0,320Z"
       ></path>
     </svg>
+
+    <!-- Section -->
+    <section class="bg-white dark:bg-gray-900 h-screen flex justify-center items-center pt-12">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:text-left lg:flex lg:items-center lg:space-x-8">
+        <div class="lg:flex-1">
+          <h1 class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-3xl dark:text-white">Apa yang kamu dapatkan dalam jasa pembuatan website PPLG?</h1>
+          <ul class="space-y-4 mb-8 mt-4 flex flex-col items-center lg:items-start">
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Cepat. Siap digunakan dalam 5 hari</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Mudah. Pesan, bayar, langsung proses</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Murah. Hanya Rp40.000,-/bulan</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Ratusan template siap dipakai</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Support SEO. Mudah ditemukan Google</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">Layanan prima 24/7</span>
+            </li>
+            <li class="flex items-center">
+              <svg class="flex-shrink-0 w-6 h-6 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+              </svg>
+              <span class="text-xl font-normal leading-tight text-gray-500 dark:text-white ms-3">GRATIS domain hosting</span>
+            </li>
+          </ul>
+          <div class="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4 lg:justify-start">
+            <button href="#" class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center text-white rounded-lg bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 dark:focus:ring-purple-900">
+              Learn more
+              <svg class="ml-2 -mr-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="lg:flex-1 lg:ml-auto">
+          <img src="img/undraw1.svg" alt="" class="hidden lg:block lg:w-full lg:h-auto lg:max-w-lg lg:object-contain lg:object-right" />
+        </div>
+      </div>
+    </section>
+    <!-- Akhir Section -->
 
     <script src="script.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
