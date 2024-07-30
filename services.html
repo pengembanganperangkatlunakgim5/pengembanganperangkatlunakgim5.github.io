@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
   </head>
 
   <body>
@@ -84,23 +85,27 @@
       <div class="relative xl:container px-6 md:px-12 lg:px-6">
         <h1 class="sm:mx-auto sm:w-10/12 md:w-2/3 font-black text-white text-4xl text-center sm:text-5xl md:text-6xl lg:w-auto lg:text-left xl:text-7xl">
           Jasa Pembuatan Website <br class="lg:block hidden" />
-          dari <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-purple-500">Kelas PPLG 5</span>.
+          dari <span class="relative text-transparent bg-clip-text bg-gradient-to-r from-purple-900 to-purple-500"><br class="lg:hidden" />Kelas PPLG 5</span>.
         </h1>
         <div class="lg:flex">
           <div class="relative mt-4 md:mt-8 space-y-4 sm:w-10/12 md:w-2/3 lg:ml-0 sm:mx-auto text-center lg:text-left lg:mr-auto lg:w-7/12">
             <p class="sm:text-lg text-white lg:w-11/12">PPLG 5 menggabungkan antara pengalaman pengguna, strategi pemasaran serta melakukan pendekatan berorientasi ROI untuk membantu kesuksesan klien kami melalui inovasi digital.</p>
-            <button
+            <a
+              href="#pricecard"
               type="button"
               class="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 shadow-lg shadow-purple-500/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4"
             >
-              Daftar Layanan
-            </button>
-            <button
+              Daftar Harga
+            </a>
+            <a
+              data-modal-target="authentication-modal"
+              data-modal-toggle="authentication-modal"
+              href="#pricecard"
               type="button"
               class="text-white bg-transparent ring-1 ring-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-300 hover:bg-purple-700 transition duration-200 ease-linear font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4"
             >
               Cek Promo
-            </button>
+            </a>
           </div>
         </div>
       </div>
@@ -117,7 +122,7 @@
     </svg>
 
     <!-- Section Card-->
-    <section class="bg-slate-100 py-24 sm:py-32">
+    <section class="bg-slate-100 py-24 sm:py-32" id="pricecard">
       <div class="mx-auto max-w-7xl px-6 lg:px-8">
         <div class="mx-auto max-w-2xl sm:text-center">
           <h2 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Jasa Pembuatan Website</h2>
@@ -125,7 +130,7 @@
         </div>
         <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mx-0 lg:flex lg:justify-center lg:max-w-none">
           <div class="grid grid-cols-1 gap-6 sm:grid-cols-3">
-            <div class="card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
+            <div class="price-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
               <h5 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">PPLG Basic</h5>
               <div class="flex items-baseline text-gray-900 dark:text-white mb-4">
                 <span class="text-3xl font-semibold">Rp</span>
@@ -133,11 +138,152 @@
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
+                data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal"
                 type="button"
-                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300"
+                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
                 Order Now
               </button>
+              <!-- Modal PPLG Basic -->
+              <!-- Main modal -->
+              <div
+                id="authentication-modal"
+                tabindex="-1"
+                aria-hidden="true"
+                class="hidden fixed top-3 right-0 left-0 z-50 justify-center items-center w-full h-[calc(100%-1rem)] max-h-full overflow-y-auto transition-opacity duration-300 ease-out transform scale-95"
+              >
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Isi Data Diri</h3>
+                      <button
+                        type="button"
+                        class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        data-modal-hide="authentication-modal"
+                      >
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                      </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-4 md:p-5">
+                      <p class="mb-4">Silakan masukkan data diri Anda di bawah ini untuk menggunakan jasa pembuatan website</p>
+                      <form class="space-y-4" action="#">
+                        <div>
+                          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap</label>
+                          <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            required
+                          />
+                        </div>
+                        <div>
+                          <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Whatsapp</label>
+                          <input
+                            type="text"
+                            name="number"
+                            id="number"
+                            placeholder="0812-3456-7890"
+                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                            required
+                          />
+                        </div>
+                        <div
+                          x-data="{ package: 'basic', contractValue: 40000 * 12 }"
+                          x-init="
+    $watch('package', value => {
+      switch (value) {
+        case 'basic':
+          contractValue = 40000 * 12;
+          break;
+        case 'advanced':
+          contractValue = 90000 * 12;
+          break;
+        case 'ultimate':
+          contractValue = 150000 * 12;
+          break;
+        default:
+          contractValue = 40000 * 12;
+      }
+    })
+  "
+                        >
+                          <div>
+                            <label for="package" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paket</label>
+                            <select
+                              x-model="package"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              id="package"
+                            >
+                              <option value="basic">Basic</option>
+                              <option value="advanced">Advanced</option>
+                              <option value="ultimate">Ultimate</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label for="contract" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontrak</label>
+                            <input
+                              type="text"
+                              name="contract"
+                              id="contract"
+                              :value="'1 Tahun Rp ' + contractValue.toLocaleString('id-ID')"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              disabled
+                            />
+                          </div>
+                          <div>
+                            <label for="setup_fee" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Setup Fee</label>
+                            <input
+                              type="text"
+                              name="setup_fee"
+                              id="setup_fee"
+                              value="Free"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              disabled
+                            />
+                          </div>
+                          <div class="flex justify-between items-center mb-2">
+                            <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                              PPN 11% (Rp
+                              <span x-text="(contractValue * 0.11).toLocaleString('id-ID')"></span>
+                              ) <br />
+                              Total Pembayaran:
+                            </p>
+                            <h3 class="font-bold text-xl">
+                              Rp
+                              <span x-text="(contractValue * 1.11).toLocaleString('id-ID')"> </span>
+                            </h3>
+                          </div>
+                        </div>
+                        <div class="flex items-center mb-4">
+                          <input
+                            id="checkbox"
+                            type="checkbox"
+                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 dark:focus:ring-offset-gray-800 focus:ring-offset-0 dark:bg-gray-700 dark:border-gray-600"
+                          />
+                          <label for="checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Dengan ini saya menyetujui Syarat dan Ketentuan Jasa Pembuatan Website</label>
+                        </div>
+
+                        <button
+                          type="submit"
+                          class="w-full text-white bg-purple-700 hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                        >
+                          Beli
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Akhir Modal PPLG Basic -->
               <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Layanan Awal</h5>
               <ul role="list" class="space-y-1">
                 <li class="flex items-center">
@@ -171,13 +317,13 @@
                   <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Free 1 Favicon</span>
                 </li>
                 <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
                   <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Design Banner Header</span>
                 </li>
                 <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="flex-shrink-0 w-4 h-4 text-gray-900 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
                   <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Design Banner Slider</span>
@@ -186,29 +332,29 @@
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">1x Revisi Desain</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">1x Revisi Desain</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">Google Index</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Google Index</span>
                 </li>
                 <li class="flex">
-                  <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                  <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">SEO Audit</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">SEO Audit</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">5 Hari Pengerjaan</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">5 Hari Pengerjaan</span>
                 </li>
               </ul>
 
-              <div class="additional-info x hidden mt-4">
+              <div class="price-additional-info x hidden mt-4">
                 <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Maintenance</h5>
                 <ul role="list" class="space-y-1">
                   <li class="flex items-center">
@@ -245,7 +391,7 @@
                     <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Unlimited Pages</span>
                   </li>
                   <li class="flex">
-                    <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-gray-700" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                       <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                     </svg>
                     <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Header Slideshow</span>
@@ -298,18 +444,20 @@
                 </ul>
               </div>
               <hr class="my-4" />
-              <span class="toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="toggleCard()">Lihat Lebih Lengkap</span>
+              <span class="price-toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="togglePriceCard()">Lihat Lebih Lengkap</span>
             </div>
-            <div class="card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
+            <div class="price-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
               <h5 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">PPLG Advanced</h5>
               <div class="flex items-baseline text-gray-900 dark:text-white mb-4">
                 <span class="text-3xl font-semibold">Rp</span>
-                <span class="text-3xl font-bold tracking-tight">75.000</span>
+                <span class="text-3xl font-bold tracking-tight">90.000</span>
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
+                data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal"
                 type="button"
-                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300"
+                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
                 Order Now
               </button>
@@ -361,29 +509,29 @@
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">2x Revisi Desain</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">2x Revisi Desain</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">Google Index</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Google Index</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">SEO Audit</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">SEO Audit</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">10 Hari Pengerjaan</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">10 Hari Pengerjaan</span>
                 </li>
               </ul>
 
-              <div class="additional-info x hidden mt-4">
+              <div class="price-additional-info x hidden mt-4">
                 <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Maintenance</h5>
                 <ul role="list" class="space-y-1">
                   <li class="flex items-center">
@@ -473,18 +621,20 @@
                 </ul>
               </div>
               <hr class="my-4" />
-              <span class="toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="toggleCard()">Lihat Lebih Lengkap</span>
+              <span class="price-toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="togglePriceCard()">Lihat Lebih Lengkap</span>
             </div>
-            <div class="card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
+            <div class="price-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
               <h5 class="mb-4 text-xl font-medium text-gray-900 dark:text-white">PPLG Ultimate</h5>
               <div class="flex items-baseline text-gray-900 dark:text-white mb-4">
                 <span class="text-3xl font-semibold">Rp</span>
-                <span class="text-3xl font-bold tracking-tight">130.000</span>
+                <span class="text-3xl font-bold tracking-tight">150.000</span>
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
+                data-modal-target="authentication-modal"
+                data-modal-toggle="authentication-modal"
                 type="button"
-                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-blue-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-blue-900 font-medium py-2 px-4 rounded-lg transition duration-300"
+                class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
                 Order Now
               </button>
@@ -536,29 +686,29 @@
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">2x Revisi Desain</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">2x Revisi Desain</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">Google Index</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Google Index</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">SEO Audit</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">SEO Audit</span>
                 </li>
                 <li class="flex">
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
-                  <span class="text-base font-normal leading-tight text-gray-900 ms-3">14 Hari Pengerjaan</span>
+                  <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">14 Hari Pengerjaan</span>
                 </li>
               </ul>
 
-              <div class="additional-info x hidden mt-4">
+              <div class="price-additional-info x hidden mt-4">
                 <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Maintenance</h5>
                 <ul role="list" class="space-y-1">
                   <li class="flex items-center">
@@ -648,7 +798,7 @@
                 </ul>
               </div>
               <hr class="my-4" />
-              <span class="toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="toggleCard()">Lihat Lebih Lengkap</span>
+              <span class="price-toggle-button cursor-pointer text-sm font-normal leading-tight text-purple-700 dark:text-purple-600 justify-center flex text-center hover:underline" onclick="togglePriceCard()">Lihat Lebih Lengkap</span>
             </div>
           </div>
         </div>
@@ -922,17 +1072,197 @@
             frequently ask question.
           </p>
         </div>
-        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mx-0 lg:flex lg:justify-center lg:max-w-none">
-          <div class="flex justify-center">
-            <div class="card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96">
-              <div class="flex justify-between items-center">
-                <h5 class="text-md font-medium text-gray-900 dark:text-white">Apa itu Jasa Pembuatan Website</h5>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-              </div>
+        <div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mx-0 lg:max-w-none flex flex-col items-center space-y-4 lg:grid lg:grid-cols-3">
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa itu Jasa Pembuatan Website</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Kamu akan mendapatkan website yang sudah online dan siap dipublikasikan sesuai kebutuhan</p>
             </div>
           </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa saja yang didapatkan dari Jasa Pembuatan Website?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Jasa Pembuatan Website adalah layanan membuat website profil bisnis sebagai identitas online di internet untuk mendapat jangkauan pelanggan lebih luas</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa saja Jasa Pembuatan Website yang ditawarkan?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">
+                Kami memiliki empat paket Jasa Pembuatan Website yang bisa dipilih sesuai dengan kebutuhan personal maupun bisnis kamu. Mulai paket Basic, Advanced, dan Ultimate yang memiliki berbagai fitur lengkap hanya dengan harga mulai
+                Rp40.000,- saja
+              </p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa perbedaan masing-masing paket Jasa Pembuatan Website?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Kami membedakan paket berdasarkan kebutuhan page (halaman) website dan paket hosting yang digunakan</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apakah saya mendapatkan domain dan hosting?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Iya, dengan membeli paket Jasa Pembuatan Website kamu akan mendapatkan domain dan hosting</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apakah domain dan hosting bisa digunakan untuk layanan lain?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Domain dan hosting tidak dapat digunakan untuk paket di luar layanan Jasa Pembuatan Website</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Berapa jumlah desain template yang ditawarkan?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Tersedia lebih dari 300 template menarik dan dikelompokkan ke dalam beberapa kategori yang bisa kamu pilih sesuai dengan jenis profil bisnis</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa yang dimaksud dengan desain logo?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Layanan membuatkan logo dengan 3 pilihan yang dapat dipilih sesuai kebutuhan kamu</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Bagaimana jika ada revisi pada desain logo?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">Revisi desain logo hanya berlaku 1 (satu) kali dan hanya berlaku untuk revisi minor (tidak merubah konsep dan struktur)</p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa itu Google Index?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">
+                Layanan untuk membantu website kamu didaftarkan ke mesin index pencarian Google, namun tidak menjamin peringkat website berada pada halaman pencarian Google
+              </p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apa itu SEO Audit?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">
+                Layanan berupa riset dan rekomendasi meta title, meta description, dan keywords sesuai dengan website kamu, yang tersedia pada paket Advanced dan Ultimate
+              </p>
+            </div>
+          </div>
+          <div
+            class="faq-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 transition-all duration-300 hover:ring-4 hover:ring-purple-700 overflow-hidden lg:w-96"
+            onclick="toggleFaqCard(this)"
+          >
+            <div class="flex justify-between items-center">
+              <h5 class="faq-title text-md font-medium text-gray-900 dark:text-white">Apakah saya mendapat email dengan nama domain?</h5>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 dark:text-white">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+              </svg>
+            </div>
+            <div class="faq-additional-info hidden mt-4">
+              <hr />
+              <p class="mt-3 mb-4 text-md font-medium text-gray-900 dark:text-white">
+                Iya, untuk meningkatkan kredibilitas bisnis, kamu bisa membuat alamat email menggunakan nama domain kamu. Jumlah alamat email maksimal pada setiap paket adalah sama
+              </p>
+            </div>
+          </div>
+          <!-- Tambahkan lebih banyak kartu sesuai kebutuhan -->
         </div>
       </div>
     </section>
@@ -1000,6 +1330,7 @@
     <!-- Akhir Footer -->
 
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({

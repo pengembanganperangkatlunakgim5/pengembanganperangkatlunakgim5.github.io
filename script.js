@@ -228,10 +228,10 @@ document.addEventListener("DOMContentLoaded", function () {
   updateActiveNav();
 });
 
-function toggleCard() {
-  const cards = document.getElementsByClassName("card");
-  const toggleButtons = document.getElementsByClassName("toggle-button");
-  const additionalInfos = document.getElementsByClassName("additional-info");
+function togglePriceCard() {
+  const cards = document.getElementsByClassName("price-card");
+  const toggleButtons = document.getElementsByClassName("price-toggle-button");
+  const additionalInfos = document.getElementsByClassName("price-additional-info");
 
   for (let i = 0; i < cards.length; i++) {
     const card = cards[i];
@@ -246,6 +246,59 @@ function toggleCard() {
       additionalInfo.classList.add("hidden");
       card.classList.remove("expanded"); // Menghapus kelas jika diperlukan untuk animasi atau styling
       toggleButton.textContent = "Lihat Lebih Lengkap";
+    }
+  }
+}
+
+function toggleFaqCard(clickedCard) {
+  // Ambil semua kartu
+  const cards = document.getElementsByClassName("faq-card");
+
+  // Periksa apakah layar lebih besar dari ukuran `lg` (1024px)
+  const isLgScreen = window.matchMedia("(min-width: 1024px)").matches;
+
+  // Jika di layar besar (`lg`), buka/tutup semua kartu
+  if (isLgScreen) {
+    // Periksa apakah kartu yang diklik saat ini tersembunyi atau tidak
+    const shouldOpen = clickedCard.querySelector(".faq-additional-info").classList.contains("hidden");
+
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const additionalInfo = card.querySelector(".faq-additional-info");
+      const faqTitle = card.querySelector(".faq-title");
+
+      if (shouldOpen) {
+        additionalInfo.classList.remove("hidden");
+        card.classList.add("expanded");
+        faqTitle.classList.add("text-purple-900");
+      } else {
+        additionalInfo.classList.add("hidden");
+        card.classList.remove("expanded");
+        faqTitle.classList.remove("text-purple-900");
+      }
+    }
+  } else {
+    // Jika di layar kecil, buka/tutup hanya kartu yang diklik
+    for (let i = 0; i < cards.length; i++) {
+      const card = cards[i];
+      const additionalInfo = card.querySelector(".faq-additional-info");
+      const faqTitle = card.querySelector(".faq-title");
+
+      if (card === clickedCard) {
+        if (additionalInfo.classList.contains("hidden")) {
+          additionalInfo.classList.remove("hidden");
+          card.classList.add("expanded");
+          faqTitle.classList.add("text-purple-900");
+        } else {
+          additionalInfo.classList.add("hidden");
+          card.classList.remove("expanded");
+          faqTitle.classList.remove("text-purple-900");
+        }
+      } else {
+        additionalInfo.classList.add("hidden");
+        card.classList.remove("expanded");
+        faqTitle.classList.remove("text-purple-900");
+      }
     }
   }
 }
