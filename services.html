@@ -98,8 +98,8 @@
               Daftar Harga
             </a>
             <a
-              data-modal-target="authentication-modal"
-              data-modal-toggle="authentication-modal"
+              data-modal-target="order-now-modal"
+              data-modal-toggle="order-now-modal"
               href="#pricecard"
               type="button"
               class="text-white bg-transparent ring-1 ring-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-300 hover:bg-purple-700 transition duration-200 ease-linear font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 md:px-10 lg:px-15 lg:py-4"
@@ -138,152 +138,13 @@
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
-                data-modal-target="authentication-modal"
-                data-modal-toggle="authentication-modal"
+                data-modal-target="order-now-modal"
+                data-modal-toggle="order-now-modal"
                 type="button"
                 class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
                 Order Now
               </button>
-              <!-- Modal PPLG Basic -->
-              <!-- Main modal -->
-              <div
-                id="authentication-modal"
-                tabindex="-1"
-                aria-hidden="true"
-                class="hidden fixed top-3 right-0 left-0 z-50 justify-center items-center w-full h-[calc(100%-1rem)] max-h-full overflow-y-auto transition-opacity duration-300 ease-out transform scale-95"
-              >
-                <div class="relative p-4 w-full max-w-md max-h-full">
-                  <!-- Modal content -->
-                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
-                    <!-- Modal header -->
-                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                      <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Isi Data Diri</h3>
-                      <button
-                        type="button"
-                        class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                        data-modal-hide="authentication-modal"
-                      >
-                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
-                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
-                        </svg>
-                        <span class="sr-only">Close modal</span>
-                      </button>
-                    </div>
-                    <!-- Modal body -->
-                    <div class="p-4 md:p-5">
-                      <p class="mb-4">Silakan masukkan data diri Anda di bawah ini untuk menggunakan jasa pembuatan website</p>
-                      <form class="space-y-4" action="#">
-                        <div>
-                          <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap</label>
-                          <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            required
-                          />
-                        </div>
-                        <div>
-                          <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Whatsapp</label>
-                          <input
-                            type="text"
-                            name="number"
-                            id="number"
-                            placeholder="0812-3456-7890"
-                            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                            required
-                          />
-                        </div>
-                        <div
-                          x-data="{ package: 'basic', contractValue: 40000 * 12 }"
-                          x-init="
-    $watch('package', value => {
-      switch (value) {
-        case 'basic':
-          contractValue = 40000 * 12;
-          break;
-        case 'advanced':
-          contractValue = 90000 * 12;
-          break;
-        case 'ultimate':
-          contractValue = 150000 * 12;
-          break;
-        default:
-          contractValue = 40000 * 12;
-      }
-    })
-  "
-                        >
-                          <div>
-                            <label for="package" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paket</label>
-                            <select
-                              x-model="package"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              id="package"
-                            >
-                              <option value="basic">Basic</option>
-                              <option value="advanced">Advanced</option>
-                              <option value="ultimate">Ultimate</option>
-                            </select>
-                          </div>
-                          <div>
-                            <label for="contract" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontrak</label>
-                            <input
-                              type="text"
-                              name="contract"
-                              id="contract"
-                              :value="'1 Tahun Rp ' + contractValue.toLocaleString('id-ID')"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              disabled
-                            />
-                          </div>
-                          <div>
-                            <label for="setup_fee" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Setup Fee</label>
-                            <input
-                              type="text"
-                              name="setup_fee"
-                              id="setup_fee"
-                              value="Free"
-                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
-                              disabled
-                            />
-                          </div>
-                          <div class="flex justify-between items-center mb-2">
-                            <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                              PPN 11% (Rp
-                              <span x-text="(contractValue * 0.11).toLocaleString('id-ID')"></span>
-                              ) <br />
-                              Total Pembayaran:
-                            </p>
-                            <h3 class="font-bold text-xl">
-                              Rp
-                              <span x-text="(contractValue * 1.11).toLocaleString('id-ID')"> </span>
-                            </h3>
-                          </div>
-                        </div>
-                        <div class="flex items-center mb-4">
-                          <input
-                            id="checkbox"
-                            type="checkbox"
-                            class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 dark:focus:ring-offset-gray-800 focus:ring-offset-0 dark:bg-gray-700 dark:border-gray-600"
-                          />
-                          <label for="checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Dengan ini saya menyetujui Syarat dan Ketentuan Jasa Pembuatan Website</label>
-                        </div>
-
-                        <button
-                          type="submit"
-                          class="w-full text-white bg-purple-700 hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
-                        >
-                          Beli
-                        </button>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Akhir Modal PPLG Basic -->
               <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Layanan Awal</h5>
               <ul role="list" class="space-y-1">
                 <li class="flex items-center">
@@ -454,8 +315,8 @@
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
-                data-modal-target="authentication-modal"
-                data-modal-toggle="authentication-modal"
+                data-modal-target="order-now-modal"
+                data-modal-toggle="order-now-modal"
                 type="button"
                 class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
@@ -631,13 +492,212 @@
                 <span class="ms-1 text-xl font-normal text-gray-900 dark:text-gray-200">/bulan</span>
               </div>
               <button
-                data-modal-target="authentication-modal"
-                data-modal-toggle="authentication-modal"
+                data-modal-target="order-now-modal"
+                data-modal-toggle="order-now-modal"
                 type="button"
                 class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
               >
                 Order Now
               </button>
+
+              <!-- Main Modal -->
+              <div
+                id="order-now-modal"
+                tabindex="-1"
+                aria-hidden="true"
+                class="hidden fixed top-3 right-0 left-0 z-50 justify-center items-center w-full h-[calc(100%-1rem)] max-h-full overflow-y-auto transition-opacity duration-300 ease-out transform scale-95"
+                x-data="formHandler()"
+              >
+                <div class="relative p-4 w-full max-w-md max-h-full">
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
+                      <h3 class="text-xl font-semibold text-gray-900 dark:text-white" x-show="!submitted">Isi Data Diri</h3>
+                      <h3 class="text-xl font-semibold text-gray-900 dark:text-white" x-show="submitted">Order Berhasil!</h3>
+                      <button
+                        type="button"
+                        class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                        @click="submitted = false; window.location.reload()"
+                      >
+                        <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+                        </svg>
+                        <span class="sr-only">Close modal</span>
+                      </button>
+                    </div>
+
+                    <div class="p-4 md:p-5">
+                      <div x-show="!submitted">
+                        <p class="mb-4 dark:text-white">Silakan masukkan data diri Anda di bawah ini untuk menggunakan jasa pembuatan website</p>
+                        <form class="space-y-4">
+                          <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nama Lengkap</label>
+                            <input
+                              type="text"
+                              name="name"
+                              id="name"
+                              x-model="name"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-2 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              required
+                            />
+                          </div>
+                          <div>
+                            <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">No Whatsapp</label>
+                            <input
+                              type="text"
+                              name="number"
+                              id="number"
+                              x-model="number"
+                              placeholder="0812-3456-7890"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-1 focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              required
+                            />
+                          </div>
+                          <div>
+                            <label for="package" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Paket</label>
+                            <select
+                              x-model="selectedPackage"
+                              @change="updateContractValue"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-purple-500 focus:border-purple-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              id="package"
+                            >
+                              <option value="basic">Basic</option>
+                              <option value="advanced">Advanced</option>
+                              <option value="ultimate">Ultimate</option>
+                            </select>
+                          </div>
+                          <div>
+                            <label for="contract" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Kontrak</label>
+                            <input
+                              type="text"
+                              name="contract"
+                              id="contract"
+                              :value="'1 Tahun Rp ' + contractValue.toLocaleString('id-ID')"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              disabled
+                            />
+                          </div>
+                          <div>
+                            <label for="setup_fee" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Setup Fee</label>
+                            <input
+                              type="text"
+                              name="setup_fee"
+                              id="setup_fee"
+                              value="Free"
+                              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                              disabled
+                            />
+                          </div>
+                          <div class="flex justify-between items-center mb-2">
+                            <p class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                              PPN 11% (Rp <span x-text="(contractValue * 0.11).toLocaleString('id-ID')"></span>) <br />
+                              Total Pembayaran:
+                            </p>
+                            <h3 class="font-bold text-xl dark:text-white">Rp <span x-text="(contractValue * 1.11).toLocaleString('id-ID')"></span></h3>
+                          </div>
+                          <div class="flex items-center mb-4">
+                            <input
+                              id="checkbox"
+                              type="checkbox"
+                              x-model="agree"
+                              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2 dark:focus:ring-offset-gray-800 focus:ring-offset-0 dark:bg-gray-700 dark:border-gray-600"
+                              required
+                            />
+                            <label for="checkbox" class="ml-2 text-sm font-medium text-gray-900 dark:text-white">
+                              Dengan ini saya menyetujui <a href="" class="text-purple-900 underline dark:text-purple-200">Syarat dan Ketentuan Jasa Pembuatan Website</a>
+                            </label>
+                          </div>
+                          <button
+                            type="button"
+                            @click="saveData"
+                            class="w-full text-white bg-purple-700 hover:bg-purple-900 focus:ring-4 focus:outline-none focus:ring-purple-700 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
+                          >
+                            Beli
+                          </button>
+                        </form>
+                      </div>
+
+                      <div x-show="submitted" class="confirm-card w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden lg:max-w-lg">
+                        <h2 class="text-2xl font-semibold mb-4 dark:text-white">Hai, <span x-text="name" class="text-purple-700 capitalize font-semibold"></span></h2>
+                        <div class="flex flex-col space-y-2 text-gray-900 dark:text-white mb-4">
+                          <p class="text-xl font-semibold -mb-2">
+                            Informasi detail order kamu: Paket
+                            <span class="font-bold">PPLG</span>
+                            <span x-text="selectedPackage" class="uppercase font-bold"></span>
+                            - Rp
+                            <span x-text="contractValue.toLocaleString('id-ID')" class="font-bold"></span>
+                          </p>
+                          <p class="text-xl font-semibold text-gray-900 dark:text-gray-200"><span x-text="name" class="text-purple-700 capitalize"></span> - <span x-text="number" class="text-purple-700"></span></p>
+                        </div>
+                        <div class="price-card w-full max-w-sm p-4 bg-slate-100 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden lg:max-w-lg space-y-4">
+                          <h3 class="font-semibold text-lg">Data Diri</h3>
+                          <ul class="capitalize">
+                            <li>Nama Lengkap: <span x-text="name" class="font-semibold"></span></li>
+                            <li>No Handphone: <span x-text="number" class="font-semibold"></span></li>
+                          </ul>
+                          <h3 class="font-semibold text-lg">Detail</h3>
+                          <ul>
+                            <li>
+                              Produk/Layanan:
+                              <span class="font-semibold">Paket Pembuatan Web</span>
+                              <span x-text="selectedPackage" class="font-semibold uppercase"></span>
+                            </li>
+                            <li>
+                              Lama Kontrak:
+                              <span class="font-semibold">1 Tahun</span>
+                            </li>
+                          </ul>
+                          <hr />
+                          <h3 class="font-semibold text-lg">Pembayaran</h3>
+                          <ul class="space-y-2 capitalize">
+                            <li class="flex justify-between">
+                              <span>Harga Pembelian:</span>
+                              <span x-text="'Rp' + contractValue.toLocaleString('id-ID') + ',00'" class="font-bold"></span>
+                            </li>
+                            <li class="flex justify-between">
+                              <span>Setup Fee:</span>
+                              <span class="font-bold">Free</span>
+                            </li>
+                            <li class="flex justify-between">
+                              <span>PPN 11%:</span>
+                              <span x-text="'Rp' + (contractValue * 0.11).toLocaleString('id-ID') + ',00'" class="font-bold"></span>
+                            </li>
+                            <li class="flex justify-between">
+                              <span>Total yang dibayar sekarang:</span>
+                              <span x-text="'Rp' + (contractValue * 1.11).toLocaleString('id-ID') + ',00'" class="font-bold"></span>
+                            </li>
+                          </ul>
+                          <hr />
+                          <p>Silakan lakukan pembayaran dan segera lakukan konfirmasi agar ordernya bisa kami proses.</p>
+                          <div x-data>
+                            <button
+                              @click="window.open('https://api.whatsapp.com/send?phone=6281521550913&text=Saya%20mau%20konfirmasi%20pembayaran%20Jasa%20Pembuatan%20Website%20PPLG5.%20Tolong%20diproses%20ya', '_blank')"
+                              class="text-white bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-200 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900 font-medium py-2 px-4 rounded-lg transition duration-300"
+                            >
+                              Konfirmasi
+                            </button>
+                          </div>
+                          <h3 class="font-semibold text-md mb-2">Metode Pembayaran</h3>
+                          <ul class="capitalize">
+                            <li>DANA E-Money</li>
+                            <li>No. Rekening: 0815-2155-0913</li>
+                            <li>Atas Nama Alan Zagi</li>
+                          </ul>
+                          <h3 class="font-semibold text-md mb-2">Gratis Domain</h3>
+                          <ul>
+                            <li>.com/ .web.id/ .sch.id/ .or.id/ .ac.id/ .my.id/ .biz.id. Selain domain tersebut dikenakan biaya tambahan sesuai dengan harga domain.</li>
+                          </ul>
+                          <h3 class="font-semibold text-md mb-2">Support</h3>
+                          <ul>
+                            <li>Silakan hubungi kami <a href="" class="text-purple-700 underline">klik disini</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Akhir Main Modal -->
+
               <h5 class="mt-3 mb-4 text-xl font-medium text-gray-900 dark:text-gray-400">Layanan Awal</h5>
               <ul role="list" class="space-y-1">
                 <li class="flex items-center">
@@ -650,6 +710,7 @@
                   <svg class="flex-shrink-0 w-4 h-4 text-purple-700 dark:text-purple-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
                   </svg>
+
                   <span class="text-base font-normal leading-tight text-gray-900 dark:text-white ms-3">Free One Time Setup</span>
                 </li>
                 <li class="flex">
@@ -1262,7 +1323,6 @@
               </p>
             </div>
           </div>
-          <!-- Tambahkan lebih banyak kartu sesuai kebutuhan -->
         </div>
       </div>
     </section>

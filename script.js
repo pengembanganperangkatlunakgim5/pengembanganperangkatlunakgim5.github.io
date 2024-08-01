@@ -302,3 +302,49 @@ function toggleFaqCard(clickedCard) {
     }
   }
 }
+
+function formHandler() {
+  return {
+    name: "",
+    number: "",
+    selectedPackage: "basic",
+    contractValue: 0,
+    agree: false,
+    submitted: false,
+    open: true, // Sesuaikan jika modal perlu dikendalikan
+    updateContractValue() {
+      const packagePrices = {
+        basic: 40000 * 12,
+        advanced: 90000 * 12,
+        ultimate: 150000 * 12,
+      };
+      this.contractValue = packagePrices[this.selectedPackage];
+    },
+    sanitizeInput(input) {
+      // Menggunakan elemen sementara untuk sanitasi
+      const div = document.createElement("div");
+      div.innerText = input;
+      return div.innerHTML; // Mengembalikan input yang telah disanitasi
+    },
+    saveData() {
+      // Mengambil data dari Alpine.js
+      let name = this.sanitizeInput(this.name);
+      let number = this.sanitizeInput(this.number);
+      let selectedPackage = this.selectedPackage; // Mengambil nilai dari elemen select
+      let agree = this.agree;
+
+      // Memeriksa apakah semua field sudah terisi
+      if (!name || !number || !selectedPackage || !agree) {
+        alert("Pastikan semua field diisi sebelum mengirim!");
+        return;
+      }
+
+      // Jika semua field sudah terisi, lanjutkan dengan proses berikutnya
+      this.submitted = true; // Mengubah state untuk menampilkan konfirmasi
+      this.open = false; // Menutup modal (jika modal perlu ditutup setelah submit)
+    },
+    init() {
+      this.updateContractValue();
+    },
+  };
+}
