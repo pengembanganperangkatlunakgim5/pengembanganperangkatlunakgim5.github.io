@@ -135,6 +135,14 @@ const students = [
     title: "Siswa Kelas",
     imageUrl: "./img/sila.jpeg",
   },
+  {
+    name: "Vika Yolanda",
+    quote: "Semua butuh proses",
+    urlInstagram: "instagram.com/_vikayolanda561",
+    insta: "_vikayolanda561",
+    title: "Siswa Kelas",
+    imageUrl: "./img/vikayolanda.jpg",
+  },
 ];
 
 const studentList = document.getElementById("studentList");
