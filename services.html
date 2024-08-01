@@ -629,13 +629,13 @@
                           <p class="text-xl font-semibold text-gray-900 dark:text-gray-200"><span x-text="name" class="text-purple-700 capitalize"></span> - <span x-text="number" class="text-purple-700"></span></p>
                         </div>
                         <div class="price-card w-full max-w-sm p-4 bg-slate-100 border border-gray-200 rounded-lg shadow sm:p-8 dark:bg-gray-800 dark:border-gray-700 overflow-hidden lg:max-w-lg space-y-4">
-                          <h3 class="font-semibold text-lg">Data Diri</h3>
-                          <ul class="capitalize">
+                          <h3 class="font-semibold text-lg dark:text-white">Data Diri</h3>
+                          <ul class="capitalize dark:text-white">
                             <li>Nama Lengkap: <span x-text="name" class="font-semibold"></span></li>
                             <li>No Handphone: <span x-text="number" class="font-semibold"></span></li>
                           </ul>
-                          <h3 class="font-semibold text-lg">Detail</h3>
-                          <ul>
+                          <h3 class="font-semibold text-lg dark:text-white">Detail</h3>
+                          <ul class="dark:text-white">
                             <li>
                               Produk/Layanan:
                               <span class="font-semibold">Paket Pembuatan Web</span>
@@ -647,8 +647,8 @@
                             </li>
                           </ul>
                           <hr />
-                          <h3 class="font-semibold text-lg">Pembayaran</h3>
-                          <ul class="space-y-2 capitalize">
+                          <h3 class="font-semibold text-lg dark:text-white">Pembayaran</h3>
+                          <ul class="space-y-2 capitalize dark:text-white">
                             <li class="flex justify-between">
                               <span>Harga Pembelian:</span>
                               <span x-text="'Rp' + contractValue.toLocaleString('id-ID') + ',00'" class="font-bold"></span>
@@ -667,7 +667,7 @@
                             </li>
                           </ul>
                           <hr />
-                          <p>Silakan lakukan pembayaran dan segera lakukan konfirmasi agar ordernya bisa kami proses.</p>
+                          <p class="dark:text-white">Silakan lakukan pembayaran dan segera lakukan konfirmasi agar ordernya bisa kami proses.</p>
                           <div x-data>
                             <button
                               @click="window.open('https://api.whatsapp.com/send?phone=6281521550913&text=Saya%20mau%20konfirmasi%20pembayaran%20Jasa%20Pembuatan%20Website%20PPLG5.%20Tolong%20diproses%20ya', '_blank')"
@@ -676,19 +676,19 @@
                               Konfirmasi
                             </button>
                           </div>
-                          <h3 class="font-semibold text-md mb-2">Metode Pembayaran</h3>
-                          <ul class="capitalize">
+                          <h3 class="font-semibold text-md mb-2 dark:text-white">Metode Pembayaran</h3>
+                          <ul class="capitalize dark:text-white">
                             <li>DANA E-Money</li>
                             <li>No. Rekening: 0815-2155-0913</li>
                             <li>Atas Nama Alan Zagi</li>
                           </ul>
-                          <h3 class="font-semibold text-md mb-2">Gratis Domain</h3>
-                          <ul>
+                          <h3 class="font-semibold text-md mb-2 dark:text-white">Gratis Domain</h3>
+                          <ul class="dark:text-white">
                             <li>.com/ .web.id/ .sch.id/ .or.id/ .ac.id/ .my.id/ .biz.id. Selain domain tersebut dikenakan biaya tambahan sesuai dengan harga domain.</li>
                           </ul>
-                          <h3 class="font-semibold text-md mb-2">Support</h3>
+                          <h3 class="font-semibold text-md mb-2 dark:text-white">Support</h3>
                           <ul>
-                            <li>Silakan hubungi kami <a href="" class="text-purple-700 underline">klik disini</a></li>
+                            <li class="dark:text-white">Silakan hubungi kami <a href="" class="text-purple-700 underline">klik disini</a></li>
                           </ul>
                         </div>
                       </div>
