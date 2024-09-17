@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XI PPLG</title>
+    <link rel="icon" href="./img/purple_pplg.png" type="image/x-icon" />
+    <link rel="shortcut icon" href="./img/purple_pplg.png" type="image/x-icon" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="portfolio.css" />
+  </head>
+
+  <body>
+    <!-- background Header -->
+    <div class="background-header">
+      <!-- Navbar -->
+      <nav x-data="{ mobileMenuOpen: false }">
+        <header class="absolute inset-x-0 top-0 z-50">
+          <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
+            <div class="flex lg:flex-1">
+              <a href="#" class="-m-1.5 p-1.5">
+                <span class="sr-only">XI PPLG</span>
+                <img class="h-8 w-auto transform scale-250" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
+              </a>
+            </div>
+            <div class="flex lg:hidden">
+              <button @click="mobileMenuOpen = true" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white">
+                <span class="sr-only">Open main menu</span>
+                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+              </button>
+            </div>
+            <div class="hidden lg:flex lg:gap-x-6">
+              <a href="index.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear"
+                >Home</a
+              >
+              <a href="services.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear"
+                >Services</a
+              >
+              <a
+                href="portfolio.html"
+                class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear ring-1 ring-purple-500 ring-offset-2"
+                >Portfolio</a
+              >
+              <a href="contact.html" class="nav-link text-sm font-semibold leading-6 text-white bg-purple-700 px-4 py-2 rounded-full shadow-lg hover:ring-1 hover:ring-purple-700 hover:bg-transparent transition duration-200 ease-linear"
+                >Contact</a
+              >
+            </div>
+            <div class="hidden lg:flex lg:flex-1 lg:justify-end"></div>
+          </nav>
+          <!-- Mobile menu, show/hide based on menu open state. -->
+          <div x-show="mobileMenuOpen" class="lg:hidden" role="dialog" aria-modal="true">
+            <!-- Background backdrop, show/hide based on slide-over state. -->
+            <div class="fixed inset-0 z-50 bg-gray-600 bg-opacity-75" @click="mobileMenuOpen = false"></div>
+            <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-slate-100 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+              <div class="flex items-center justify-between">
+                <a href="#" class="-m-1.5 p-1.5">
+                  <span class="sr-only">XI PPLG</span>
+                  <img class="h-8 w-auto" src="./img/purple_pplg_clear.png" alt="XI PPLG" />
+                </a>
+                <button @click="mobileMenuOpen = false" type="button" class="-m-2.5 rounded-md p-2.5 text-gray-700">
+                  <span class="sr-only">Close menu</span>
+                  <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+              <div class="mt-6 flow-root">
+                <div class="-my-6 divide-y divide-gray-500/10">
+                  <div class="space-y-2 py-6">
+                    <a href="index.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Home</a>
+                    <a href="services.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Services</a>
+                    <a href="portfolio.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Portfolio</a>
+                    <a href="contact.html" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Contact</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+      </nav>
+
+      <!-- Judul header/hero -->
+      <div class="isi-hero">
+        <div class="judul"></div>
+        <div class="subjudul"></div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 2000,
+        offset: 200,
+        delay: 100,
+        once: true,
+      });
+    </script>
+  </body>
+</html>

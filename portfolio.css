@@ -1,0 +1,10 @@
+body {
+  height: 1000px;
+  overflow-x: hidden;
+}
+
+.background-header {
+  background-color: rgb(17 24 39);
+  width: 100vw;
+  height: 100vh;
+}
