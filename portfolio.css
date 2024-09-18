@@ -2,9 +2,40 @@ body {
   height: 1000px;
   overflow-x: hidden;
 }
-
+/* style header */
 .background-header {
   background-color: rgb(17 24 39);
   width: 100vw;
   height: 100vh;
+  position: absolute;
+}
+.isi-hero {
+  display: flex;
+  height: auto;
+  color: white;
+  flex-direction: column;
+  margin-top: calc(100vh / 3.4);
+  text-align: right;
+  margin-right: 2.6rem;
+  justify-content: end;
+}
+
+/* style judul */
+.judul .kelas {
+  display: inline-block;
+  background-image: linear-gradient(to left, rgb(70, 20, 94), rgb(135, 115, 161));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -2rem;
+}
+.judul h1 {
+  font-size: 4.5em;
+}
+/* style subjudul */
+.subjudul {
+  margin-top: 1rem;
+  padding-left: 45rem;
+}
+.subjudul p {
+  font-size: 1.1em;
 }
