@@ -4,22 +4,31 @@ body {
 }
 /* font */
 @font-face {
-  font-family: "montserrat";
+  font-family: "montserrat1";
   src: url(./font/Montserrat-ExtraBold.ttf) format(TrueType);
 }
+@font-face {
+  font-family: "montserrat2";
+  src: url(./font/Montserrat-Bold.ttf) format(TrueType);
+}
+/* body styling */
+body {
+  background-color: #ebf0fa;
+}
+
 /* style header */
 .background-header {
   background-color: rgb(17 24 39);
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: relative;
 }
 .isi-hero {
   display: flex;
   height: auto;
   color: white;
   flex-direction: column;
-  margin-top: calc(100vh / 4);
+  margin-top: calc(100vh / 8.9);
   text-align: right;
   margin-right: 2.6rem;
   justify-content: end;
@@ -34,8 +43,8 @@ body {
   margin-top: -2rem;
 }
 .judul h1 {
-  font-size: 4.7em;
-  font-family: montserrat;
+  font-size: 4.6em;
+  font-family: montserrat1;
 }
 /* style subjudul */
 .subjudul {
@@ -79,4 +88,22 @@ body {
 }
 .promo:hover {
   background-color: rgb(149, 66, 197);
+}
+
+/* bagian list portfolio */
+.cont-listport {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7.4rem 3em;
+}
+.judul-portfolio {
+  text-align: center;
+  color: rgb(17 24 39);
+}
+.judul-portfolio h3 {
+  font-size: 2.3em;
+  font-family: montserrat2;
+  display: inline-block;
+  margin-bottom: 1.2rem;
 }

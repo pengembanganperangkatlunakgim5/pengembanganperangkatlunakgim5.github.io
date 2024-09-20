@@ -18,7 +18,7 @@
     <div class="background-header">
       <!-- Navbar -->
       <nav x-data="{ mobileMenuOpen: false }">
-        <header class="absolute inset-x-0 top-0 z-50">
+        <header class="relative inset-x-0 top-0 z-50">
           <nav class="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div class="flex lg:flex-1">
               <a href="#" class="-m-1.5 p-1.5">
@@ -97,13 +97,23 @@
           <a href="services.html">
             <div class="tombol pesan"><p>Ayo Pesan!</p></div>
           </a>
-          <a href="services.html #pricecard">
+          <a href="services.html #pricecard" data-modal-target="order-now-modal" data-modal-toggle="order-now-modal">
             <div class="tombol promo"><p>Cek Promo</p></div>
           </a>
         </div>
       </div>
     </div>
-
+    <div class="cont-listport">
+      <div class="judul-portfolio">
+        <h3>We are Portfolio</h3>
+        <h4>Berikut beberapa portfolio dari yang kami kembangkan. Monggo dilihat-lihat</h4>
+        <h4>abang-abang dan kakak-kakak😘</h4>
+      </div>
+      <div class="listport">
+        <div class="port"></div>
+        <div class="port"></div>
+      </div>
+    </div>
     <!-- script -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.4.1/dist/flowbite.min.js"></script>
