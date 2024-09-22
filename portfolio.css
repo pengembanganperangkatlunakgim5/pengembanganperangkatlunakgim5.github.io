@@ -54,7 +54,7 @@ body {
 .subjudul p {
   font-size: 1.1em;
 }
-/* tombol */
+/* button */
 .bagian-tombol {
   display: flex;
   flex-direction: row;
@@ -90,7 +90,7 @@ body {
   background-color: rgb(149, 66, 197);
 }
 
-/* bagian list portfolio */
+/* list portfolio section */
 .cont-listport {
   display: flex;
   flex-direction: column;
@@ -159,21 +159,75 @@ body {
 .portmain {
   width: 60%;
 }
-.port .kesatu {
+
+/*style for each list of portfolio*/
+.fotoport {
   width: 300px;
   min-height: 250px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  background-image: url(./img/no-image.jpg);
   border-radius: 0 10px 10px 0;
 }
-.port .kedua {
-  width: 300px;
-  min-height: 250px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+
+/*add the list image */
+.ke1 {
   background-image: url(./img/no-image.jpg);
-  border-radius: 0 10px 10px 0;
+}
+.ke2 {
+  background-image: url(./img/purple_pplg.png);
+}
+.ke3 {
+  background-image: url(./img/purple_pplg_clear.png);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+  }
+  .subjudul p {
+    font-size: 1.1em;
+  }
+  .isi-hero .subjudul {
+    padding: 0 13rem;
+  }
+  .isi-hero .judul h1 {
+    font-size: 3.5em;
+  }
+}
+@media (max-width: 768px) {
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 5rem;
+  }
+
+  .isi-hero .judul h1 {
+    padding: 0 5rem;
+    line-height: 1.2em;
+    font-size: 2.6em;
+  }
+  .judul .kelas {
+    margin-top: 0;
+    scale: 1.1;
+  }
+  .tombol {
+    scale: 0.9;
+  }
+
+  .listport .port p {
+    font-size: 0.8em;
+    padding-right: 0.2rem;
+  }
+  .port .info-port h3 {
+    font-size: 0.7em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .port .fotoport {
+    width: 200px;
+    height: 150px;
+  }
 }
