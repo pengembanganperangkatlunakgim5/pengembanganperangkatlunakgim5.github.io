@@ -180,12 +180,19 @@ body {
 .ke3 {
   background-image: url(./img/purple_pplg_clear.png);
 }
+.ke4 {
+  background-image: url(./img/no-image.jpg);
+}
+.ke5 {
+  background-image: url(./img/purple_pplg.png);
+}
 
 /* responsive */
 @media (max-width: 1024px) {
   .isi-hero {
     align-items: center;
     text-align: center;
+    margin-left: 6vw;
   }
   .subjudul p {
     font-size: 1.1em;
@@ -198,8 +205,13 @@ body {
   }
 }
 @media (max-width: 768px) {
+  .isi-hero {
+    padding: 0;
+    margin: 11vw;
+  }
+
   .isi-hero .subjudul {
-    font-size: 0.8em;
+    font-size: 1em;
     padding: 0 5rem;
   }
 
@@ -229,5 +241,113 @@ body {
   .port .fotoport {
     width: 200px;
     height: 150px;
+  }
+}
+@media (max-width: 720px) {
+  .isi-hero .subjudul {
+    padding: 0 3rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 375px) {
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 14.5vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .port .fotoport {
+    width: 130px;
+    min-height: 80px;
+  }
+
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 2rem;
+  }
+  .isi-hero .subjudul {
+    padding: 0 2rem;
+  }
+
+  .isi-hero .judul h1 {
+    padding: 0 2rem;
+    line-height: 1.2em;
+    font-size: 1.8em;
+  }
+  .judul-portfolio h3 {
+    font-size: 1.5em;
+  }
+  .judul-portfolio h4 {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 320px) {
+  .bagian-tombol {
+    scale: 0.85;
+  }
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 14.5vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 1rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 1rem;
+    line-height: 1.2em;
+    font-size: 1.6em;
+  }
+  .listport .port p {
+    font-size: 0.7em;
+  }
+
+  .listport .port h1 {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 425px) {
+  .bagian-tombol {
+    scale: 0.9;
+  }
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 11vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 1rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 1rem;
+    line-height: 1.2em;
+    font-size: 1.8em;
+  }
+  .listport .port h1 {
+    font-size: 1.2em;
   }
 }

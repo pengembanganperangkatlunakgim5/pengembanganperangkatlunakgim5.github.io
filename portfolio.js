@@ -21,6 +21,18 @@ let portfolio = [
     whenPublishIt: "13-11-2122",
     Description: "lorem ipsum dolor sit amet acka msamklmamk aa,z,mknqwo asadsx",
   }),
+  (listFour = {
+    Title: "Python my life",
+    nameOfDeveloper: "Calvin",
+    whenPublishIt: "12-2-2021",
+    Description: "Saya cinta python python sayang saya",
+  }),
+  (listFive = {
+    Title: "C++ is better",
+    nameOfDeveloper: "Renaldi",
+    whenPublishIt: "24-04-2024",
+    Description: "C++ is better than other languange broo. this is the prove!",
+  }),
 ];
 
 // template code list
