@@ -1,0 +1,353 @@
+body {
+  height: 1000px;
+  overflow-x: hidden;
+}
+/* font */
+@font-face {
+  font-family: "montserrat1";
+  src: url(./font/Montserrat-ExtraBold.ttf) format(TrueType);
+}
+@font-face {
+  font-family: "montserrat2";
+  src: url(./font/Montserrat-Bold.ttf) format(TrueType);
+}
+/* body styling */
+body {
+  background-color: #f1f5f9;
+}
+
+/* style header */
+.background-header {
+  background-color: rgb(17 24 39);
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.isi-hero {
+  display: flex;
+  height: auto;
+  color: white;
+  flex-direction: column;
+  margin-top: calc(100vh / 8.9);
+  text-align: right;
+  margin-right: 2.6rem;
+  justify-content: end;
+}
+
+/* style judul */
+.judul .kelas {
+  display: inline-block;
+  background-image: linear-gradient(to left, rgb(121, 61, 156), rgb(177, 123, 248));
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-top: -2rem;
+}
+.judul h1 {
+  font-size: 4.6em;
+  font-family: montserrat1;
+}
+/* style subjudul */
+.subjudul {
+  margin-top: 0.5rem;
+  padding-left: 45rem;
+}
+.subjudul p {
+  font-size: 1.1em;
+}
+/* button */
+.bagian-tombol {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  margin-top: 1.3rem;
+}
+.tombol {
+  width: 10em;
+  height: 3.3em;
+  display: flex;
+}
+.tombol p {
+  margin: auto;
+}
+.pesan {
+  margin-right: 15px;
+  background-image: linear-gradient(to left, rgb(121, 61, 156), rgb(149, 82, 236));
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgb(120, 61, 197);
+  transition: 0.6s;
+}
+.pesan:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 5px 15px rgb(120, 61, 197);
+}
+
+.promo {
+  border-radius: 10px;
+  border: 1px solid rgb(87, 32, 119);
+  transition: 0.6s;
+}
+.promo:hover {
+  background-color: rgb(149, 66, 197);
+}
+
+/* list portfolio section */
+.cont-listport {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 7.4rem 3em;
+  color: rgb(17 24 39);
+}
+.judul-portfolio {
+  text-align: center;
+  color: rgb(17 24 39);
+}
+.judul-portfolio h3 {
+  font-size: 2.3em;
+  font-family: montserrat2;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+.listport {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* list of portfolio */
+.port {
+  width: 90vw;
+  height: auto;
+  border: 2px solid rgb(87, 32, 119);
+  box-shadow: 0 5px 10px rgb(103, 46, 136);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex: 2 1 0;
+  justify-content: space-between;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 2.5rem;
+  color: #f1f5f9;
+  background-color: rgb(7, 7, 20);
+  transition: 0.6s;
+  cursor: pointer;
+}
+.port:hover {
+  transform: translateY(-4px) scale(1.009);
+  box-shadow: 0 7px 15px rgb(103, 46, 136);
+}
+.port h1,
+.port p {
+  display: inline-block;
+  margin-left: 1.2rem;
+}
+.port h1 {
+  font-size: 1.5em;
+  font-family: montserrat2;
+}
+.port hr {
+  background-color: #d5def5;
+}
+.info-port {
+  font-size: 0.8em;
+  font-family: montserrat2;
+  display: block;
+  margin: 0.6rem 0 0.5rem 1rem;
+}
+.portmain {
+  width: 60%;
+}
+
+/*style for each list of portfolio*/
+.fotoport {
+  width: 300px;
+  min-height: 250px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 0 10px 10px 0;
+}
+
+/*add the list image */
+.ke1 {
+  background-image: url(./img/no-image.jpg);
+}
+.ke2 {
+  background-image: url(./img/purple_pplg.png);
+}
+.ke3 {
+  background-image: url(./img/purple_pplg_clear.png);
+}
+.ke4 {
+  background-image: url(./img/no-image.jpg);
+}
+.ke5 {
+  background-image: url(./img/purple_pplg.png);
+}
+
+/* responsive */
+@media (max-width: 1024px) {
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    margin-left: 6vw;
+  }
+  .subjudul p {
+    font-size: 1.1em;
+  }
+  .isi-hero .subjudul {
+    padding: 0 13rem;
+  }
+  .isi-hero .judul h1 {
+    font-size: 3.5em;
+  }
+}
+@media (max-width: 768px) {
+  .isi-hero {
+    padding: 0;
+    margin: 11vw;
+  }
+
+  .isi-hero .subjudul {
+    font-size: 1em;
+    padding: 0 5rem;
+  }
+
+  .isi-hero .judul h1 {
+    padding: 0 5rem;
+    line-height: 1.2em;
+    font-size: 2.6em;
+  }
+  .judul .kelas {
+    margin-top: 0;
+    scale: 1.1;
+  }
+  .tombol {
+    scale: 0.9;
+  }
+
+  .listport .port p {
+    font-size: 0.8em;
+    padding-right: 0.2rem;
+  }
+  .port .info-port h3 {
+    font-size: 0.7em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .port .fotoport {
+    width: 200px;
+    height: 150px;
+  }
+}
+@media (max-width: 720px) {
+  .isi-hero .subjudul {
+    padding: 0 3rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 375px) {
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 14.5vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .port .fotoport {
+    width: 130px;
+    min-height: 80px;
+  }
+
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 2rem;
+  }
+  .isi-hero .subjudul {
+    padding: 0 2rem;
+  }
+
+  .isi-hero .judul h1 {
+    padding: 0 2rem;
+    line-height: 1.2em;
+    font-size: 1.8em;
+  }
+  .judul-portfolio h3 {
+    font-size: 1.5em;
+  }
+  .judul-portfolio h4 {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 320px) {
+  .bagian-tombol {
+    scale: 0.85;
+  }
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 14.5vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 1rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 1rem;
+    line-height: 1.2em;
+    font-size: 1.6em;
+  }
+  .listport .port p {
+    font-size: 0.7em;
+  }
+
+  .listport .port h1 {
+    font-size: 0.9em;
+  }
+}
+@media (max-width: 425px) {
+  .bagian-tombol {
+    scale: 0.9;
+  }
+  .isi-hero {
+    align-items: center;
+    text-align: center;
+    padding: 0;
+    margin-left: 11vw;
+  }
+  .port .info-port h3 {
+    font-size: 0.6em;
+  }
+  .port .info-port {
+    margin: 0.5rem 0.3rem 0.4rem 0.7rem;
+  }
+  .isi-hero .subjudul {
+    font-size: 0.8em;
+    padding: 0 1rem;
+  }
+  .isi-hero .judul h1 {
+    padding: 0 1rem;
+    line-height: 1.2em;
+    font-size: 1.8em;
+  }
+  .listport .port h1 {
+    font-size: 1.2em;
+  }
+}
